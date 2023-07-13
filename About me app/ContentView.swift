@@ -10,10 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     @State var image1 = ("")
+    @State var image2 = ("")
     
     var body: some View {
      //home page non iteractible display
-        VStack (spacing:-50) {
+        VStack (spacing:-40) {
             Text("Zoe Wardrip-Fruin")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
@@ -29,15 +30,20 @@ struct ContentView: View {
             
             Spacer ()
             
-            HStack {
+            HStack (spacing: -60) {
                 Image(image1)
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fit)
-                    .padding (100)
+                    
+                Image (image2)
+                   .resizable(resizingMode: .stretch)
+                  .aspectRatio(contentMode: .fit)
+                  .cornerRadius(50)
             }
            
             Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
                             image1 = ("frog")
+                image2 = ("duck")
                         }
                         .buttonStyle(.borderedProminent)
 
