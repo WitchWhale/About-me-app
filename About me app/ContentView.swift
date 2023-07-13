@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var image1 = ("frog")
+    @State var image1 = ("")
     
     var body: some View {
      //home page non iteractible display
@@ -25,15 +25,21 @@ struct ContentView: View {
             Text ("Art Expidition")
                 .font(.title)
             Spacer()
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                image1 = ("frog")
-            }
-            .buttonStyle(.borderedProminent)
-            Image(image1)
-                .resizable(resizingMode: .stretch)
-                .aspectRatio(contentMode: .fit)
             
-            Spacer (minLength: 350)
+            
+            Spacer ()
+            
+            HStack {
+                Image(image1)
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .padding (100)
+            }
+           
+            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+                            image1 = ("frog")
+                        }
+                        .buttonStyle(.borderedProminent)
 
         }
     }
