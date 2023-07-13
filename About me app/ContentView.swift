@@ -8,9 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var image1 = ("frog")
+    
     var body: some View {
-        VStack {
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
+     //home page non iteractible display
+        VStack (spacing:-50) {
+            Text("Zoe Wardrip-Fruin")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+            Image("dragon 2")
+                .resizable(resizingMode: .stretch)
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(1000)
+                .padding(70)
+            Text ("Art Expidition")
+                .font(.title)
+            Spacer()
+            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+                image1 = ("frog")
+            }
+            .buttonStyle(.borderedProminent)
+            Image(image1)
+                .resizable(resizingMode: .stretch)
+                .aspectRatio(contentMode: .fit)
+            
+            Spacer (minLength: 350)
+
         }
     }
 }
